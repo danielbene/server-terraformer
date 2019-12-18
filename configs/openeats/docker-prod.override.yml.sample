@@ -1,0 +1,14 @@
+version: "2.3"
+services:
+  nginx:
+    ports:
+      - "OPENEATS_GUI_PORT:80"
+    restart: always
+  api:
+    ports:
+      - "OPENEATS_API_PORT:8000"
+    restart: always
+  web:
+    restart: on-failure
+  db:
+    restart: always

@@ -1,0 +1,28 @@
+version: "3.3"
+services:
+
+  prometheus:
+    image: prom/prometheus:v2.13.1
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ${PROM_CONF_DIR}/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:6.4.3
+    container_name: grafana
+    ports:
+      - 3000:3000
+    environment:
+      - TZ=${TZ}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASS}
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    restart: unless-stopped
+
+volumes:
+  grafana-storage:
