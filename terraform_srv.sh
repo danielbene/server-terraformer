@@ -8,7 +8,7 @@ PROM_CONF_DIR=`grep -m 1 PROM_CONF_DIR docker_compose/.env | cut -d '=' -f 2-`
 
 # ---CONF_SETUP------------------------
 
-sudo chmod -R 777 ../_terraform_srv
+sudo chmod -R 777 ../server-terraformer
 
 sudo mkdir -p $PROM_CONF_DIR
 sudo mkdir -p `grep -m 1 LOG_DIR docker_compose/.env | cut -d '=' -f 2-`
@@ -32,3 +32,4 @@ cd docker_compose
 docker-compose -f ctl_comp.yml -p ctl_stack up -d
 docker-compose -f data_comp.yml -p data_stack up -d
 docker-compose -f monitoring_comp.yml -p monitoring_stack up -d
+docker-compose -f lychee_comp.yml -p lychee_stack up -d
