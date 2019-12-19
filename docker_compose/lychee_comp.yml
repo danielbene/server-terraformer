@@ -1,5 +1,6 @@
 version: '3.3'
 services:
+
   lychee:
     image: linuxserver/lychee
     container_name: lychee
@@ -16,6 +17,7 @@ services:
       - ${LYCHEE_IMG}:/pictures
       - ${LYCHEE_IMPORT_DIR}:/importer
 
+  # webapp db setup: 'db' '<MYSQL_USER>' '<MYSQL_PASSWORD>' '<MYSQL_DATABASE>'
   db:
     image: mariadb
     container_name: lychee_db
