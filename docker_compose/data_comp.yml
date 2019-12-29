@@ -1,0 +1,32 @@
+version: "3.3"
+services:
+
+  samba:
+    image: dperson/samba
+    container_name: samba
+    ports:
+      - 139:139
+      - 445:445
+    volumes:
+      - ${HOST_SMB_MOUNT}:${GUEST_SMB_MOUNT}
+    command: -p -u ${SMB_USR};${SMB_PASS} -s ${SMB_NAME};${GUEST_SMB_MOUNT};yes;no;no;${SMB_USR}
+    restart: unless-stopped
+
+  # dont forget to setup watchdir handling
+  transmission:
+    image: dperson/transmission
+    container_name: transmission
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    environment:
+      - TZ=${TZ}
+      - TRUSER=${TR_USER}
+      - TRPASSWD=${TR_PASS}
+    volumes:
+      - ${TR_CONF_DIR}:/var/lib/transmission-daemon/info
+      - ${HOST_SMB_MOUNT}/torrent-files:/var/lib/transmission-daemon/info/watch-dir
+      - ${HOST_SMB_MOUNT}/torrent-complete:/var/lib/transmission-daemon/downloads
+      - ${HOST_SMB_MOUNT}/torrent-inprogress:/var/lib/transmission-daemon/incomplete
+    restart: unless-stopped

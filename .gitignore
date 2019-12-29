@@ -1,0 +1,7 @@
+.env
+cronjobs
+cron_scripts/
+docker-prod.override.yml
+env_prod.list
+prometheus.yml
+remove_confs.sh

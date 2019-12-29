@@ -1,0 +1,39 @@
+version: '3.3'
+services:
+
+  lychee:
+    image: linuxserver/lychee
+    container_name: lychee
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+    ports:
+      - 5000:80
+    networks:
+      - lychee
+    volumes:
+      - ${LYCHEE_DIR}:/config
+      - ${LYCHEE_IMG}:/pictures
+      - ${LYCHEE_IMPORT_DIR}:/importer
+
+  # webapp db setup: 'db' '<MYSQL_USER>' '<MYSQL_PASSWORD>' '<MYSQL_DATABASE>'
+  db:
+    image: mariadb
+    container_name: lychee_db
+    restart: unless-stopped
+    networks:
+     - lychee
+    volumes:
+     - db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${LYCHEE_DB_ROOT_PASS}
+      MYSQL_DATABASE: ${LYCHEE_DB_NAME}
+      MYSQL_USER: ${LYCHEE_DB_USER}
+      MYSQL_PASSWORD: ${LYCHEE_DB_USER_PASS}
+
+networks:
+  lychee:
+
+volumes:
+  db:
