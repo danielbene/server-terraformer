@@ -1,2 +1,0 @@
-* * * * * /home/daniel/configs/monitoring/cron/cron_monitoring.sh
-* * * * * sleep 30; /home/daniel/configs/monitoring/cron/cron_monitoring.sh
