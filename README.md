@@ -9,15 +9,15 @@ Opinions are welcome.
 
 ## Services
 
-Docker
-Portainer
-NodeExporter
-Prometheus
-Grafana
-Samba
-Transmission
-OpenEats
-SimpleDashParticles
+Docker  
+Portainer  
+NodeExporter  
+Prometheus  
+Grafana  
+Samba  
+Transmission  
+OpenEats  
+SimpleDashParticles  
 
 ## Setup
 
