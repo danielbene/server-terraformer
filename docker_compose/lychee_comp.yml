@@ -14,7 +14,7 @@ services:
       - lychee
     volumes:
       - ${LYCHEE_DIR}:/config
-      - ${LYCHEE_IMG}:/pictures
+      - ${LYCHEE_IMG}:/pictures  # images should go in lychee_dir subfolder for backup
       - ${LYCHEE_IMPORT_DIR}:/importer
 
   # webapp db setup: 'db' '<MYSQL_USER>' '<MYSQL_PASSWORD>' '<MYSQL_DATABASE>'
