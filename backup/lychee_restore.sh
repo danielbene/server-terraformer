@@ -3,6 +3,7 @@
 # ---HOST_PATHS------------------------
 
 BACKUP_FILE="/home/daniel/backup/lychee/lychee_2020-01-11.tar"
+cd /home/daniel/projects/server-terraformer/backup  # server-terraformer backup dir
 
 # ---ENV_VARS--------------------------
 
