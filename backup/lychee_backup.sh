@@ -14,6 +14,7 @@ LYCHEE_DB_USER_PASS=`grep -m 1 LYCHEE_DB_USER_PASS ../docker_compose/.env | cut 
 
 # ---BACKUP---------------------------
 
+mkdir -p $BACKUP_DIR
 cd $BACKUP_DIR
 tar cfj lychee_folder.tar.bz2 -C $LYCHEE_DIR .  # uncompression: sudo tar xvf lychee_folder.tar.bz2
 
