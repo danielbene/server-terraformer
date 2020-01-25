@@ -10,6 +10,7 @@ API_PORT=OPENEATS_API_PORT
 DJANGO_SECRET_KEY=5aslu(#fo90e2^e+yo7np8a(h-^5@lqadr093sx0$ay!dykv7$
 DJANGO_SETTINGS_MODULE=base.settings
 DJANGO_DEBUG=False
+# There are problems with CORS setup, so if you cant login than check from another source, and see if CORS blockage is the problem
 ALLOWED_HOST=localhost, HOST_IP, 192.168.*.*
 HTTP_X_FORWARDED_PROTO=true
 
