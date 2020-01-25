@@ -17,6 +17,7 @@ Grafana
 Samba  
 Transmission  
 OpenEats  
+Lychee  
 SimpleDashParticles  
 
 ## Setup
