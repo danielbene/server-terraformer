@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Using dockerized kodi that will render to the default tty in headless environment.
+# This is a weird solution, but costs no overhead, and keeps everything clean.
+# Basically my tv plugged into the server's HDMI, and I controll Kodi with my phone.
+# For technical information search x11docker.
+
 apt-get install -y xpra nxagent xserver-xephyr xauth xclip x11-xserver-utils xinit xdotool weston xwayland xserver-xorg-input-all
 curl -fsSL https://raw.githubusercontent.com/mviereck/x11docker/master/x11docker | bash -s -- --update
 docker pull x11docker/openbox
