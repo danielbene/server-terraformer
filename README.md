@@ -10,6 +10,7 @@ Opinions are welcome.
 ## Services
 
 Docker  
+x11docker  
 Portainer  
 NodeExporter  
 Prometheus  
@@ -18,6 +19,7 @@ Samba
 Transmission  
 OpenEats  
 Lychee  
+Kodi  
 SimpleDashParticles  
 
 ## Setup
@@ -25,6 +27,7 @@ SimpleDashParticles
 The only thing that needs to be modified is the environment file. You can find an example layout in the the docker-compose folder called `.env_sample`. You have to copy that as a `.env` file in place, and fill the required variables. These are:
 
 `HOST_IP`: the ip of your server (this should be static). (e.g. 192.168.1.2)  
+`HOST_NAME`: name of the host machine. Used by prometheus for job name, it can be anything. (e.g. myhost42)
 `HOST_BASE_DIST`: the base distribution of your OS. Tested with `ubuntu` and `debian`. May work with others, if there is a docker repo for them.  
 `LOG_DIR`: path where log files will placed. (e.g. /path/to/logs)  
 `SCRAPE_INTERVAL`: interval in seconds that sets, how often node exporter will query system statistics. (e.g. 30)  
@@ -50,5 +53,6 @@ The only thing that needs to be modified is the environment file. You can find a
 `LYCHEE_DB_NAME`: lychee db name. (e.g. lychee)  
 `LYCHEE_DB_USER`: lychee db user name. (e.g. lychee)  
 `LYCHEE_DB_USER_PASS`: lychee db user password. (e.g. lychee)  
+`KODI_DIR`: x11docker kodi container config directory. (e.g. /path/to/config/dir)
 
 After it's done, it can be started simply with `sudo ./terraform_srv.sh`. In the building process open-eats will ask for some user information, but everything else should work unattended. After its done (and no error happend), webservices can be checked with the help of the ports file.
