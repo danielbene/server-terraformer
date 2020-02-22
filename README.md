@@ -24,6 +24,8 @@ SimpleDashParticles
 
 ## Setup
 
+*The target OS is **Ubuntu-server 18.04 LTS**. With other systems there may be compatibility issues.*
+
 The only thing that needs to be modified is the environment file. You can find an example layout in the the docker-compose folder called `.env_sample`. You have to copy that as a `.env` file in place, and fill the required variables. These are:
 
 `HOST_IP`: the ip of your server (this should be static). (e.g. 192.168.1.2)  
