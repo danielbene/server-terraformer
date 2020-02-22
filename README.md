@@ -27,6 +27,7 @@ SimpleDashParticles
 The only thing that needs to be modified is the environment file. You can find an example layout in the the docker-compose folder called `.env_sample`. You have to copy that as a `.env` file in place, and fill the required variables. These are:
 
 `HOST_IP`: the ip of your server (this should be static). (e.g. 192.168.1.2)  
+`HOST_NAME`: name of the host machine. Used by prometheus for job name, it can be anything. (e.g. myhost42)
 `HOST_BASE_DIST`: the base distribution of your OS. Tested with `ubuntu` and `debian`. May work with others, if there is a docker repo for them.  
 `LOG_DIR`: path where log files will placed. (e.g. /path/to/logs)  
 `SCRAPE_INTERVAL`: interval in seconds that sets, how often node exporter will query system statistics. (e.g. 30)  
