@@ -10,6 +10,7 @@ Opinions are welcome.
 ## Services
 
 Docker  
+x11docker  
 Portainer  
 NodeExporter  
 Prometheus  
@@ -18,6 +19,7 @@ Samba
 Transmission  
 OpenEats  
 Lychee  
+Kodi  
 SimpleDashParticles  
 
 ## Setup
@@ -50,5 +52,6 @@ The only thing that needs to be modified is the environment file. You can find a
 `LYCHEE_DB_NAME`: lychee db name. (e.g. lychee)  
 `LYCHEE_DB_USER`: lychee db user name. (e.g. lychee)  
 `LYCHEE_DB_USER_PASS`: lychee db user password. (e.g. lychee)  
+`KODI_DIR`: x11docker kodi container config directory. (e.g. /path/to/config/dir)
 
 After it's done, it can be started simply with `sudo ./terraform_srv.sh`. In the building process open-eats will ask for some user information, but everything else should work unattended. After its done (and no error happend), webservices can be checked with the help of the ports file.
