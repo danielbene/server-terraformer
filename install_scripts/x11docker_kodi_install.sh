@@ -21,8 +21,8 @@ Requires=docker.service
 After=network.target docker.service
 
 [Service]
-ExecStartPre=/usr/bin/docker pull erichough/kodi
-ExecStart=/usr/bin/x11docker --xorg --alsa=3 --gpu --home=KODI_DIR -- -v HOST_SMB_MOUNT:/media/ro -p 8085:8080 -p 9095:9090 -- erichough/kodi
+ExecStartPre=/usr/bin/docker pull erichough/kodi:leia
+ExecStart=/usr/bin/x11docker --xorg --alsa=3 --gpu --home=KODI_DIR -- -v HOST_SMB_MOUNT:/media/ro -p 8085:8080 -p 9095:9090 -- erichough/kodi:leia
 KillMode=process
 
 [Install]
